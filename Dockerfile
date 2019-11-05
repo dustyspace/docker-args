@@ -1,5 +1,4 @@
 FROM busybox
 
-ENTRYPOINT ["top"]
-CMD ["-b", "-d", "5"]
-
+ENTRYPOINT ["top", "-b", "-n", "10"]
+CMD ["-d", "10"]

@@ -3,3 +3,4 @@ services:
   echo:
     image: docker.giffin.org/dustyspace/docker-args
     build: .
+    command: ["-d", "1"]
