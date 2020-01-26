@@ -16,4 +16,8 @@ services:
       - ./hello.conf:/etc/nginx/conf.d/hello.conf
       - ./index.html:/usr/share/nginx/html/index.html
     
+  postgres:
+    image: postgres:11.4-alpine
+    volumes:
+      - "postgres:/var/lib/postgresql/data"
 
