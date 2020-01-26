@@ -1,6 +1,19 @@
 version: '3'
 services:
-  echo:
-    image: docker.giffin.org/dustyspace/docker-args
-    build: .
-    command: ["-d", "1"]
+
+#  echo:
+#    build: .
+#    command: ["-d", "1"]
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./hello.conf:/etc/nginx/conf.d/hello.conf
+      - ./index.html:/usr/share/nginx/html/index.html
+    
+
