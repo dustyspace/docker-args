@@ -11,6 +11,11 @@ services:
     restart: always
     ports:
       - "80:80"
+    environment:
+      - AWS_ACCESS_KEY_ID=XXX
+      - AWS_DEFAULT_REGION=us-west-2
+      - AWS_SECRET_ACCESS_KEY=ABCDEF
+      - RED=ABCDEF
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - ./hello.conf:/etc/nginx/conf.d/hello.conf
@@ -18,6 +23,10 @@ services:
     
   postgres:
     image: postgres:11.4-alpine
+    environment:
+      - DB_USER=XXX
+      - DB_PASS=YYY
+      - RED=ABCDEF
     volumes:
       - "postgres:/var/lib/postgresql/data"
 
